@@ -57,7 +57,7 @@ int i(int n)
 
 void main()
 {
-    while (TRUE)
+    while (1)
     {
         const int numVars = 4;
 
@@ -71,8 +71,8 @@ void main()
 
             printf("Digite um número:\n");
 
-            scanf_s("%d", varPtr);
-            // scanf("%d", varPtr);
+            //scanf_s("%d", varPtr);
+            scanf("%d", varPtr);
 
             if (*varPtr < 0)
             {
