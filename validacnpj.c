@@ -8,10 +8,11 @@ void main()
    inicio: 
    system("cls");
    fflush(stdin);
-   int cnpj_vetor[12],n,m,i,erro;
+   int cnpj_vetor[14],n,m,i,erro;
    int parte1,parte2,parte3,dig1;
    int parte5,parte6,parte7,dig2,opc;
-   int numeros[12],resp,resto1,resto2;
+   int resp,resto1,resto2;
+   char numeros[14];
    printf("*==================================================================*\n");
    printf("|       O que voce deseja fazer?         |\n");
    printf("*----------------------------------------*\n");
@@ -41,14 +42,15 @@ void main()
          //|       Leitura dos numeros do CNPJ        |
          //*==========================================*
          printf("Digite os 12 primeiros do CNPJ: ",i);
-         for(i=1;i<=12;i++)
+         for(i=0;i<=11;i++)
          {
          	
-            if(i-1==2)printf(".");
-            if(i-1==5)printf(".");
-            if(i-1==8)printf("/");
+            if(i-1==1)printf(".");
+            if(i-1==4)printf(".");
+            if(i-1==7)printf("/");
             numeros[i]=getche();
-            cnpj_vetor[i]= numeros[i];
+            cnpj_vetor[i]=(numeros[i] - '0');
+            //cnpj_vetor[i]= numeros[i];
             //numeros[i]=' '; 
          }
          break;
@@ -56,14 +58,14 @@ void main()
       case 2:
       {
          printf("Digite os 14 numeros do CNPJ: ",i);
-         for(i=1;i<=14;i++)
+         for(i=0;i<=14;i++)
          {
             if(i-1==2)printf(".");
             if(i-1==5)printf(".");
             if(i-1==8)printf("/");
             if(i-1==12)printf("-");
            numeros[i]=getche();
-            cnpj_vetor[i]=numeros[i];
+         cnpj_vetor[i]=(numeros[i] - '0');
             //numeros[i]=' ';
          }
          break;
@@ -79,22 +81,26 @@ void main()
    //*=========================================*
    //|       Primeiro digito verificador       |
    //*=========================================*
-   n =((cnpj_vetor[1]*5)+
-         (cnpj_vetor[2]*4)+
-         (cnpj_vetor[3]*3)+
-         (cnpj_vetor[4]*2)+
-         (cnpj_vetor[5]*9)+
-         (cnpj_vetor[6]*8)+
-         (cnpj_vetor[7]*7)+
-         (cnpj_vetor[8]*6)+
-         (cnpj_vetor[9]*5)+
-         (cnpj_vetor[10]*4)+
-         (cnpj_vetor[11]*3)+
-         (cnpj_vetor[12]*2));
-   parte1= (n / 11);
-   resto1= n % 11;
-   if(resto1 < 2)dig1=0;
-   else dig1 = (11 - resto1);
+   n =((((cnpj_vetor[0] - '0') * 5 ) +
+         ((cnpj_vetor[1] - '0') * 4 ) +
+         ((cnpj_vetor[2] - '0') * 3 ) +
+         ((cnpj_vetor[3] - '0') * 2 ) +
+         ((cnpj_vetor[4] - '0') * 9 ) +
+         ((cnpj_vetor[5] - '0') * 8 ) +
+         ((cnpj_vetor[6] - '0') * 7 ) +
+         ((cnpj_vetor[7] - '0') * 6 ) +
+         ((cnpj_vetor[8] - '0') * 5 ) +
+         ((cnpj_vetor[9] - '0') * 4 ) +
+         ((cnpj_vetor[10] - '0') * 3 ) +
+         ((cnpj_vetor[11] - '0') * 2 ) % 11 ));
+   //parte1= (n / 11);
+   //resto1= n % 11;
+   if(n < 2) {
+   	dig1=0;
+   }
+   else {
+   	dig1 = (11 - n);
+   } 
   /* parte2=(parte1 * 11);
    parte3=(n - parte2);
    dig1=(11 - parte3); */
@@ -109,18 +115,18 @@ void main()
    //*=========================================*
    //|       Segundo digito verificador        |
    //*=========================================*
-   m =((cnpj_vetor[1]*6)+
-         (cnpj_vetor[2]*5)+
-         (cnpj_vetor[3]*4)+
-         (cnpj_vetor[4]*3)+
-         (cnpj_vetor[5]*2)+
-         (cnpj_vetor[6]*9)+
-         (cnpj_vetor[7]*8)+
-         (cnpj_vetor[8]*7)+
-         (cnpj_vetor[9]*6)+
-         (cnpj_vetor[10]*5)+
-         (cnpj_vetor[11]*4)+
-         (cnpj_vetor[12]*3)+
+   m =((cnpj_vetor[0]*6)+
+         (cnpj_vetor[1]*5)+
+         (cnpj_vetor[2]*4)+
+         (cnpj_vetor[3]*3)+
+         (cnpj_vetor[4]*2)+
+         (cnpj_vetor[5]*9)+
+         (cnpj_vetor[6]*8)+
+         (cnpj_vetor[7]*7)+
+         (cnpj_vetor[8]*6)+
+         (cnpj_vetor[9]*5)+
+         (cnpj_vetor[10]*4)+
+         (cnpj_vetor[11]*3)+
          (dig1*2));
    parte5= (m / 11);
    resto2 = (m % 11);
@@ -140,15 +146,17 @@ void main()
    //|       Impressao do cnpj completo       | 
    //*==========================================*
    printf("Numero completo do CNPJ:\n");
-   for(i=1;i<=12;i++)
+   for(i=0;i<=11;i++)
    {
       printf("%d",cnpj_vetor[i]);//numeros do CNPJ
-      if(i==2)printf(".");
-      if(i==5)printf(".");
-      if(i==8)printf("/");
+      if(i==1)printf(".");
+      if(i==4)printf(".");
+      if(i==7)printf("/");
    }
+   
    if(opc==1)
    printf("-%d%d\n",dig1,dig2); //dois últimos digitos
+   
    if(opc==2)
    {
       if(cnpj_vetor[13]==dig1 && cnpj_vetor[14]==dig2)
@@ -165,6 +173,7 @@ void main()
    printf("*==================================================================*\n");
    printf("Pressione \"enter\" para continuar...");
    getchar();
-   goto inicio; //volta no inicio do programa (não usem goto kkk)
+   goto inicio; //volta no inicio do programa
    fim:;
 }
+
