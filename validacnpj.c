@@ -11,8 +11,8 @@ void main()
    int cnpj_vetor[14],n,m,i,erro;
    int parte1,parte2,parte3,dig1;
    int parte5,parte6,parte7,dig2,opc;
-   int resp,resto1,resto2;
-   char numeros[14];
+   int resto1,resto2;
+   char resp,numeros[14];
    printf("*==================================================================*\n");
    printf("|       O que voce deseja fazer?         |\n");
    printf("*----------------------------------------*\n");
