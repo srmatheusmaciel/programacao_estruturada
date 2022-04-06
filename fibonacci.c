@@ -1,8 +1,13 @@
+// DESENVOLVIDO POR MATHEUS MACIEL E CLEIDSON ALMEIDA
+// PROGRAMA PARA CALCULAR FUNÇÕES RECURSIVAS, NÃO RECURSIVAS E O N-ÉSIMO NUMERO DA SEQUENCIA DE FIBONACCI
+
+
+
 
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <locale.h>
 
 int f(int n) {
     if (n==1)
@@ -39,12 +44,13 @@ int h(int n)
     return result;
 } 
 
-int i(int n)
+int I(int n)
 {
+	int i;
     int f0 = 0;
     int f1 = 1;
 
-    for (int i = 2; i <= n; i++)
+    for ( i = 2; i <= n; i++)
     {
         int f2 = f0 + f1;
         f0 = f1;
@@ -57,7 +63,10 @@ int i(int n)
 
 void main()
 {
-    while (TRUE)
+	
+	setlocale(LC_ALL, "");
+	int i;
+    while (1)
     {
         const int numVars = 4;
 
@@ -65,14 +74,14 @@ void main()
 
         int hasFailed = 0;
 
-        for (int i = 0; i < numVars; i++)
+        for ( i = 0; i < numVars; i++)
         {
             int* varPtr = &vars[i];
 
             printf("Digite um número:\n");
 
-            scanf_s("%d", varPtr);
-            // scanf("%d", varPtr);
+           // scanf_s("%d", varPtr);
+             scanf("%d", varPtr);
 
             if (*varPtr < 0)
             {
@@ -92,9 +101,8 @@ void main()
             return;
         }
 
-        int resultado = 2 * f(b) + 5 * g(a) - 3 * h(d) + 7 * i(c);
+        int resultado = 2 * f(b) + 5 * g(a) - 3 * h(d) + 7 * I(c);
 
         printf("\n\nUtilizando os valores de a = %d ,b = %d ,c= %d, d= %d, temos o resultado = %d\n", a, b, c, d, resultado);
     }
 }
- 
