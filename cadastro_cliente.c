@@ -10,10 +10,10 @@
 	
 
 
-//vari·vel contadora
+//vari√°vel contadora
 int i;
 
-//vari·vel din‚mica que serve pra alocar os dados no documento txt
+//vari√°vel din√¢mica que serve pra alocar os dados no documento txt
 FILE *file;
 
 //definindo a estrutura lista_clientes
@@ -26,21 +26,21 @@ struct lista_clientes {
 	
 };
 
-//funÁ„o principal
+//fun√ß√£o principal
 int main () {
-	/* Configura a localidade para o ambiente padr„o */
+	/* Configura a localidade para o ambiente padr√£o */
 	setlocale(LC_ALL,"");
 	
 	system("cls");
 	fflush(stdin);
 	
 	
-	//FILE *file; abre o arquivo cliente.txt e escreve os dados l·.
+	//FILE *file; abre o arquivo cliente.txt e escreve os dados l√°.
 	file = fopen("cliente.txt","w");
 	
-	//verifica se o arquivo foi aberto ou n„o.
+	//verifica se o arquivo foi aberto ou n√£o.
 	if(file == NULL){
-		printf("O ARQUIVO N√O PODE SER ABERTO");
+		printf("O ARQUIVO N√ÉO PODE SER ABERTO");
 		getchar();
 		exit(1);
 	}
@@ -54,11 +54,11 @@ int main () {
 	void imprimeCliente(struct lista_clientes lista[10]);
 		
 		printf("**********| ======================================== |********** \n");
-		printf("**********| EXERCÕCIO 3 - TRABALHO ACAD MICO         |********** \n");
-		printf("**********| PROGRAMA«√O ESTRUTURADA - PROF ROG…RIO   |********** \n");
+		printf("**********| EXERC√çCIO 3 - TRABALHO ACAD√äMICO         |********** \n");
+		printf("**********| PROGRAMA√á√ÉO ESTRUTURADA - PROF ROG√âRIO   |********** \n");
 		printf("**********| ======================================== |********** \n");
 		printf("**********|TURMA:922 ALUNO:MATHEUS DE OLIVEIRA MACIEL|********** \n");
-		printf("**********| MATRÕCULA: 2021200020 - UNICARIOCA MEIER |********** \n");
+		printf("**********| MATR√çCULA: 2021200020 - UNICARIOCA MEIER |********** \n");
 		printf("**********| ======================================== |********** \n\n");
 		printf("**********| ======================================== |********** \n");
 		printf("**********|      PROGRAMA CADASTRO DE CLIENTES       |********** \n");
@@ -67,7 +67,7 @@ int main () {
 	recebeCliente(clientes);
 	armazenaCliente(clientes);
 	
-	// funÁ„o que fecha o documento
+	// fun√ß√£o que fecha o documento
 	fclose(file);
 	
 	imprimeCliente(clientes);
@@ -80,7 +80,7 @@ int main () {
 }
 
 
-//FunÁ„o que recebe as informaÁıes dos clientes
+//Fun√ß√£o que recebe as informa√ß√µes dos clientes
 void recebeCliente (struct lista_clientes lista[10]) {
 	
 	
@@ -93,14 +93,14 @@ for(i=0; i<10; i++) {
 }
 	
 	for(i=0;i<10;i++){
-		printf("Digite o primeiro nome do(a) %d∫ cliente: \n ", i + 1);
+		printf("Digite o primeiro nome do(a) %d¬∫ cliente: \n ", i + 1);
 	//	scanf("%s%*c",lista[i].nome); 
 			gets(lista[i].nome);	
 		printf("Digite o sobrenome nome do(a) %s : \n ", lista[i].nome);
 		//scanf("%s%*c",lista[i].sobrenome); 
 			gets(lista[i].sobrenome);
 		
-		printf("Digite endereÁo do(a) %s (tudo na mesma linha) : \n ", lista[i].nome);
+		printf("Digite endere√ßo do(a) %s (tudo na mesma linha) : \n ", lista[i].nome);
 		//scanf("%s%*c",lista[i].endereco); 
 			gets(lista[i].endereco);
 		
@@ -116,25 +116,25 @@ for(i=0; i<10; i++) {
 	
 };
 
-//funÁ„o que imprime os clientes na tela
+//fun√ß√£o que imprime os clientes na tela
 void imprimeCliente (struct lista_clientes lista[10])
 {
 	printf("Nome completo do sexto cliente: %s %s \n",lista[5].nome,lista[5].sobrenome);	
-	printf("EndereÁo do nono cliente: %s \n",lista[8].endereco);	
+	printf("Endere√ßo do nono cliente: %s \n",lista[8].endereco);	
 	printf("Idade do quarto cliente: %d \n",lista[3].idade);
 	printf("Telefone do terceiro cliente: %s \n",lista[2].telefone);
 	printf("\n\n");	
 	};
 		
 			
-//funÁ„o que armazena os clientes no documento txt
+//fun√ß√£o que armazena os clientes no documento txt
 void armazenaCliente (struct lista_clientes lista[10])
 {
 	//abre o arquivo no diretorio (cliente.txt)
 	file = fopen("cliente.txt","w");
 
 	if(file == NULL){
-		printf("O ARQUIVO N√O PODE SER SALVO");
+		printf("O ARQUIVO N√ÉO PODE SER SALVO");
 		getchar();
 		exit(1);
 	}
@@ -145,7 +145,7 @@ void armazenaCliente (struct lista_clientes lista[10])
 	
 	//Pega os dados e insere no documento txt
 		for(i=0;i<10;i++){
-		fprintf(file,"(%d∫ cliente) Nome completo: %s %s| EndereÁo: %s | idade: %d | telefone: %s \n\n",i + 1
+		fprintf(file,"(%d¬∫ cliente) Nome completo: %s %s| Endere√ßo: %s | idade: %d | telefone: %s \n\n",i + 1
 													  ,lista[i].nome,
 													  lista[i].sobrenome,
 													  lista[i].endereco,
@@ -153,7 +153,7 @@ void armazenaCliente (struct lista_clientes lista[10])
 													  lista[i].telefone);	
 
 }
-	// funÁ„o que fecha o documento
+	// fun√ß√£o que fecha o documento
 	fclose(file);
 };
 
