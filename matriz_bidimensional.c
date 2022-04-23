@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 
-//faÁa um programa que leia 2 matrizes M e N e depois imprima na tela a matriz O = 5 * M - 2 * N;
+//fa√ßa um programa que leia 2 matrizes M e N e depois imprima na tela a matriz O = 5 * M - 2 * N;
 
 #define linha 4
 #define coluna 5
@@ -19,14 +19,14 @@ float O[linha][coluna],resultado;
 
 
 
-printf("**********| EXERCÕCIO 1 - TRABALHO ACAD MICO         |********** \n");
-printf("**********| PROGRAMA«√O ESTRUTURADA - PROF ROG…RIO   |********** \n");
+printf("**********| EXERC√çCIO 1 - TRABALHO ACAD√äMICO         |********** \n");
+printf("**********| PROGRAMA√á√ÉO ESTRUTURADA - PROF ROG√âRIO   |********** \n");
 printf("**********| ======================================== |********** \n");
 printf("**********|TURMA:922 ALUNO:MATHEUS DE OLIVEIRA MACIEL|********** \n");
-printf("**********| MATRÕCULA: 2021200020 - UNICARIOCA MEIER |********** \n");
+printf("**********| MATR√çCULA: 2021200020 - UNICARIOCA MEIER |********** \n");
 printf("**********| ======================================== |********** \n");
 printf("**********| PROGRAMA CALCULA MATRIZES BIDIMENSIONAIS |********** \n\n");
-printf("faÁa um programa que leia 2 matrizes M e N e depois imprima na tela a matriz O = 5 * M - 2 * N \n");
+printf("fa√ßa um programa que leia 2 matrizes M e N e depois imprima na tela a matriz O = 5 * M - 2 * N \n");
 printf("**********| ======================================== |********** \n\n");
 //recebe o valor de M
 for(i=0;i<linha;i++){
@@ -43,7 +43,7 @@ for(i=0;i<linha;i++){
 //imprime o valor de M
 for (i=0; i<linha; i++){
 for (j=0; j<coluna; j++)
-printf("Valor de M na posiÁ„o (%d.%d): %.2f \n ",i,j,M[i][j]);
+printf("Valor de M na posi√ß√£o (%d.%d): %.2f \n ",i,j,M[i][j]);
 printf("\n");
 
 }
@@ -62,7 +62,7 @@ for(i=0;i<linha;i++){
 //imprime o valor de N
 for (i=0; i<linha; i++){
 for (j=0; j<coluna; j++)
-printf("Valor de N na posiÁ„o (%d.%d): %.2f \n ",N[i][j]);
+printf("Valor de N na posi√ß√£o (%d.%d): %.2f \n ",N[i][j]);
 printf("\n");
 
 }
@@ -74,7 +74,7 @@ for(i=0;i<linha;i++){
 		
 		O[i][j] = 5 * M[i][j] - 2 * N[i][j];
 		resultado = (float)O[i][j];
-		printf("valor de O quando M ta na posiÁ„o %d.%d e N na posiÁ„o %d.%d È: %.2f \n",i,j,i,j,O[i][j]);
+		printf("valor de O quando M ta na posi√ß√£o %d.%d e N na posi√ß√£o %d.%d √©: %.2f \n",i,j,i,j,O[i][j]);
 	}
 }
 
