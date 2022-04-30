@@ -56,7 +56,7 @@ int main () {
  
 
 	//FILE *file; abre o arquivo cliente.txt e escreve os dados lá.
-	file = fopen("teste.txt","w");
+	file = fopen("cliente.txt","w");
 	
 	//verifica se o arquivo foi aberto ou não.
 	if(file == NULL){
